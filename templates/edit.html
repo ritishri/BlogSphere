@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+ {% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for("static", filename="assets/img/home-bg.jpg") }}');">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <h3>Basic Actions</h3>
+                    <a href="/dashboard"><button class="btn btn-primary">Admin Dashboard</button></a>
+                    <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+                    <hr>
+            
+             
+             
+
+
+     <h1>Add/Edit Posts</h1>
+<!-- The error is /edit/{{post.sno or 0}} i have to use this because... The {{ post.sno or 0 }} ensures that when adding a new post, the form action is /edit/0, and when editing an existing post, it uses the correct sno. -->
+     <form name="sentMessage" id="contactForm" action="/edit/{{post.sno or 0}}" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name='title' required data-validation-required-message="Please enter your name." value="{{post.title}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Tagline</label>
+                <input type="text" class="form-control" placeholder="Enter Tagline" id="tline" name="tline" required data-validation-required-message="Please enter your email address." value="{{post.tagline}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Slug</label>
+                <input type="text" class="form-control" placeholder="Enter Slug" name="slug" id="slug" required data-validation-required-message="Please enter your phone number." value="{{post.slug}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Content</label>
+                <textarea rows="5" class="form-control" placeholder="Write Content" name = "content" id="content" required data-validation-required-message="Please enter a message.">{{post.content}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+             <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Image File</label>
+                <input rows="5" class="form-control" placeholder="Upload Image File" name = "img_file" id="img_file" required data-validation-required-message="Please enter a message." value="{{post.img_file}}"></input>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+    
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+            <br>
+          </form>
+                    
+                </div>
+            </div>
+        </div>
+ {% endblock %}
+
+
+      

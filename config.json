@@ -1,0 +1,19 @@
+{
+  "params": {
+    "local_server" : "True",
+    "local_uri" : "mysql://root:@localhost/blogsphere",
+    "prod_uri" :  "mysql://root:@localhost/blogsphere",
+    "fb_url" : "https://facebook.com/blogsphere",
+    "tw_url" : "https://twitter.com/blogsphere",
+    "gh_url" : "https://github.com/blogsphere",
+    "blog_name": "BlogSphere",
+    "tag_line": "The Blog website using Flask",
+    "gmail-user" : "pshri0084@gmail.com",
+    "gmail-password" : "gugu@2002",
+    "about-text" : "Hii i'm Ritika, Learning about flask for my research paper.",
+    "no_of_posts": 2,
+    "admin_user" : "Ritika",
+    "admin_password" : "ritu@78",
+    "upload_location": "D:\\flask-lect\\flask-project\\static"
+  }
+}
